@@ -1,11 +1,15 @@
-// Maze Solver
-// copyright: CS50
-// https://cs50.harvard.edu/ai/2020/projects/0/maze/
-// author: Bonnie
-//Date: 2025-01-09
-//Description: This program uses a stack to solve a maze. 
-//The maze is a grid of cells, with walls between some of the cells. A start and goal cell are specified. 
-//The program finds a path from the start to the goal, as follows: 
+# Maze Solver
+# Copyright: CS50
+# Source: https://cs50.harvard.edu/ai/2020/projects/0/maze/
+# Author: Bonnie
+# Date: 2025-01-09
+# Description:
+# This program uses a stack-based depth-first search algorithm to solve a maze. 
+# The maze is represented as a grid of cells, with walls between some of the cells. 
+# A start cell ('A') and a goal cell ('B') are specified in the maze file. 
+# The program finds a path from the start to the goal by exploring possible moves
+# and prints the solution path if one is found. It also outputs an image of the maze
+# with the solution and optionally highlights explored cells.
 
 import sys
 
@@ -187,27 +191,27 @@ class Maze():
         draw = ImageDraw.Draw(img)
 
         solution = self.solution[1] if self.solution is not None else None
-        for i, row in enumerate(self.walls):
-            for j, col in enumerate(row):
+        for rowIndex, row in enumerate(self.walls):
+            for columIndex, col in enumerate(row):
 
                 # Walls
                 if col:
                     fill = (40, 40, 40)
 
                 # Start
-                elif (i, j) == self.start:
+                elif (rowIndex, columIndex) == self.start:
                     fill = (255, 0, 0)
 
                 # Goal
-                elif (i, j) == self.goal:
+                elif (rowIndex, columIndex) == self.goal:
                     fill = (0, 171, 28)
 
                 # Solution
-                elif solution is not None and show_solution and (i, j) in solution:
+                elif solution is not None and show_solution and (rowIndex, columIndex) in solution:
                     fill = (220, 235, 113)
 
                 # Explored
-                elif solution is not None and show_explored and (i, j) in self.explored:
+                elif solution is not None and show_explored and (rowIndex, columIndex) in self.explored:
                     fill = (212, 97, 85)
 
                 # Empty cell
@@ -216,8 +220,8 @@ class Maze():
 
                 # Draw cell
                 draw.rectangle(
-                    ([(j * cell_size + cell_border, i * cell_size + cell_border),
-                      ((j + 1) * cell_size - cell_border, (i + 1) * cell_size - cell_border)]),
+                    ([(columIndex * cell_size + cell_border, rowIndex * cell_size + cell_border),
+                      ((columIndex + 1) * cell_size - cell_border, (rowIndex + 1) * cell_size - cell_border)]),
                     fill=fill
                 )
 
