@@ -1,3 +1,10 @@
+# Author: Bonnie Zhu
+# Date: January 14
+# Description: This script performs rejection sampling to estimate
+#              the distribution of attending an appointment given 
+#              that the train is delayed. It uses a Bayesian 
+#              Network from the pomegranate library. © CS50
+
 from model import model
 
 # Observed data
