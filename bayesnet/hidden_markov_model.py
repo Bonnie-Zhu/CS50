@@ -1,3 +1,7 @@
+# Author: Bonnie Zhu
+# Date: January 14
+# Description:Defines a Hidden Markov Model (HMM) with states for sun and rain, and their respective observation distributions.
+
 # hidden_markov_model.py
 from pomegranate import HiddenMarkovModel, DiscreteDistribution
 import numpy as np

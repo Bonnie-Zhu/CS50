@@ -1,4 +1,8 @@
-# bayesian_network.py
+# Author: Bonnie Zhu
+# Date: January 14
+# Description: Defines a Bayesian Network with nodes for rain, train delays, and appointment attendance.
+#              It sets up the conditional probability tables and creates the network."
+#              © CS50
 from pomegranate import ConditionalProbabilityTable, BayesianNetwork, State
 
 # Define the distributions for each node

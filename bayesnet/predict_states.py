@@ -5,7 +5,7 @@
 #              that the train is delayed. It uses a Bayesian 
 #              Network from the pomegranate library. © CS50
 
-from model import model
+from hidden_markov_model import model
 
 # Observed data
 observations = [

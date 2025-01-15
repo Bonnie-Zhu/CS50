@@ -1,3 +1,7 @@
+# Author: Bonnie Zhu
+# Date: January 14
+# Description:Uses the Bayesian Network model to calculate the probability of a given observation.
+
 from model import model
 
 def calculate_probability(observation):
