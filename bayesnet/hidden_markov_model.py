@@ -22,7 +22,7 @@ states = [sun, rain]
 # Transition model
 transitions = np.array(
     [[0.8, 0.2],  # Tomorrow's predictions if today = sun
-     [0.3, 0.7]]  # Tomorrow's predictions if today = rain
+    [0.3, 0.7]]  # Tomorrow's predictions if today = rain
 )
 
 # Starting probabilities
